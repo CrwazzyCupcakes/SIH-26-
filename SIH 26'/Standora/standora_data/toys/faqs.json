@@ -1,0 +1,10 @@
+{
+  "category": "toys",
+  "faqs": [
+    {
+      "question": "Does my toy startup need BIS certification before selling?",
+      "answer": "Yes, if manufacturing or importing toys for children under 14 years. Toys must conform to IS 9873 and bear the BIS Standard Mark, per the Toys (Quality Control) Order, 2020.",
+      "citation": "Toys (Quality Control) Order, 2020"
+    }
+  ]
+}

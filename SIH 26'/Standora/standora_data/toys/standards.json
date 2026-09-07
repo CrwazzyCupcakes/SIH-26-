@@ -1,0 +1,59 @@
+{
+  "category": "toys",
+  "standards": [
+    {
+      "is_number": "IS 9873 (Part 1)",
+      "title": "Mechanical and physical properties (toy safety)",
+      "year": "2019",
+      "mandatory": true,
+      "scheme": "QCO - Toys (Quality Control) Order, 2020; BIS licensing under Scheme-I",
+      "source_url": "https://www.bis.gov.in/is-9873-part-1-2019/",
+      "notes": ""
+    },
+    {
+      "is_number": "IS 9873 (Part 2)",
+      "title": "Flammability (toy safety)",
+      "year": "2017",
+      "mandatory": true,
+      "scheme": "QCO - Toys (Quality Control) Order, 2020",
+      "source_url": "https://www.bis.gov.in/wp-content/uploads/2020/03/Toy_QC_order.pdf",
+      "notes": ""
+    },
+    {
+      "is_number": "IS 9873 (Part 3)",
+      "title": "Chemical properties",
+      "year": "not specified in research",
+      "mandatory": true,
+      "scheme": "QCO - Toys (Quality Control) Order, 2020",
+      "source_url": "https://www.services.bis.gov.in/tmp/tbl5_2024-11-11-10-09.pdf",
+      "notes": "Part of the Safety of Toys compilation"
+    },
+    {
+      "is_number": "IS 9873 (Part 4)",
+      "title": "Swings, slides and similar activity toys for indoor/outdoor family domestic use",
+      "year": "not specified in research",
+      "mandatory": true,
+      "scheme": "QCO - Toys (Quality Control) Order, 2020",
+      "source_url": "https://www.services.bis.gov.in/tmp/tbl5_2024-11-11-10-09.pdf",
+      "notes": ""
+    },
+    {
+      "is_number": "IS 9873 (Part 7)",
+      "title": "Surface chemicals",
+      "year": "not specified in research",
+      "mandatory": true,
+      "scheme": "QCO - Toys (Quality Control) Order, 2020",
+      "source_url": "https://www.services.bis.gov.in/tmp/tbl5_2024-11-11-10-09.pdf",
+      "notes": ""
+    },
+    {
+      "is_number": "IS 9873 (Part 9)",
+      "title": "Phthalates",
+      "year": "not specified in research",
+      "mandatory": true,
+      "scheme": "QCO - Toys (Quality Control) Order, 2020",
+      "source_url": "https://www.services.bis.gov.in/tmp/tbl5_2024-11-11-10-09.pdf",
+      "notes": ""
+    }
+  ]
+}

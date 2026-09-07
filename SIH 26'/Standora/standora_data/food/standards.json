@@ -1,0 +1,41 @@
+{
+  "category": "packaged_food_products",
+  "standards": [
+    {
+      "is_number": "IS 14543",
+      "title": "Packaged drinking water (including mineral water)",
+      "year": "not specified in research",
+      "mandatory": "check QCO status before asserting",
+      "scheme": "BIS voluntary unless QCO-notified; also FSSAI-regulated",
+      "source_url": "https://www.bis.gov.in/wp-content/uploads/2025/03/temp_2131689472.pdf",
+      "notes": "Widely cited in both BIS and FSSAI contexts"
+    },
+    {
+      "is_number": "IS 14309",
+      "title": "Blended edible vegetable oils",
+      "year": "not specified in research",
+      "mandatory": "typically FSSAI-regulated; BIS standard may be voluntary",
+      "scheme": "FAD 13 - Oils And Oilseeds committee",
+      "source_url": "https://www.services.bis.gov.in/php/BIS_2.0/dgdashboard/published/standards",
+      "notes": "One of ~107 standards under FAD 13 committee"
+    },
+    {
+      "is_number": "IS 11069",
+      "title": "RBD soybean oil",
+      "year": "not specified in research",
+      "mandatory": "typically FSSAI-regulated",
+      "scheme": "FAD 13 - Oils And Oilseeds committee",
+      "source_url": "https://www.services.bis.gov.in/php/BIS_2.0/dgdashboard/published/standards",
+      "notes": ""
+    },
+    {
+      "is_number": "IS 11068",
+      "title": "Edibility criteria (edible oils)",
+      "year": "not specified in research",
+      "mandatory": "typically FSSAI-regulated",
+      "scheme": "FAD 13 - Oils And Oilseeds committee",
+      "source_url": "https://www.services.bis.gov.in/php/BIS_2.0/dgdashboard/published/standards",
+      "notes": ""
+    }
+  ]
+}

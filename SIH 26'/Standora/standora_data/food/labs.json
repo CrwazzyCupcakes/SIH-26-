@@ -1,0 +1,25 @@
+{
+  "category": "packaged_food_products",
+  "source": "BIS LIMS - https://lims.bis.gov.in/home/labs/ (filter: food scope)",
+  "note": "PLACEHOLDER - pull actual rows from LIMS directory. Example labs mentioned in research below need full contact details added.",
+  "labs": [
+    {
+      "name": "Intertek India - Food Services",
+      "location": "Hyderabad",
+      "scope": "food (to be confirmed via LIMS)",
+      "contact": "to be filled from LIMS"
+    },
+    {
+      "name": "NDDB CALF",
+      "location": "Anand",
+      "scope": "food (to be confirmed via LIMS)",
+      "contact": "to be filled from LIMS"
+    },
+    {
+      "name": "FARE Labs",
+      "location": "Gurugram",
+      "scope": "food (to be confirmed via LIMS)",
+      "contact": "to be filled from LIMS"
+    }
+  ]
+}

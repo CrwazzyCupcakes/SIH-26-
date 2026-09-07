@@ -1,0 +1,19 @@
+{
+  "category": "electrical_appliances_electronics",
+  "scheme_name": "Compulsory Registration Scheme (CRS) - Scheme-II Registration",
+  "source_url": "https://www.bis.gov.in/product-certification/products-under-compulsory-certification/scheme-ii-registration-scheme/",
+  "portal_url": "https://www.crsbis.in/BIS/registration-page.do",
+  "note": "PLACEHOLDER STRUCTURE - the full CRS product table (IS No., Title, Product Category, Notification date) needs to be scraped from the BIS Scheme-II page directly, row by row. This is the exact-match lookup table your assistant queries when a user names a specific product.",
+  "sample_rows": [
+    {
+      "product_category": "LED Lamps",
+      "is_number": "IS 16102 (Part 1)",
+      "notification_reference": "to be filled from scraped table"
+    },
+    {
+      "product_category": "IT Equipment / Adapters",
+      "is_number": "IS 13252 (Part 1)",
+      "notification_reference": "to be filled from scraped table"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Standora | Grounded Standards Assistant</title>
+    <style>
+      :root { --bg: #f7f7f5; --panel: #ffffff; --ink: #242424; --muted: #77736d; --line: #e5e2dc; --accent: #c85a35; --soft: #f1eee8; }
+      * { box-sizing: border-box; }
+      body { margin: 0; color: var(--ink); background: var(--bg); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .app { min-height: 100vh; display: flex; flex-direction: column; }
+      .topbar { height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 30px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.82); }
+      .brand { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 750; letter-spacing: -.02em; }
+      .brand-mark { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 9px; color: white; background: var(--accent); font-size: 14px; font-weight: 800; }
+      .status { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 13px; }
+      .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #4e9b6b; }
+      .chat-shell { width: min(850px, calc(100% - 32px)); flex: 1; margin: 0 auto; display: flex; flex-direction: column; }
+      .welcome { padding: 74px 0 36px; text-align: center; }
+      .welcome h1 { margin: 0 0 12px; font-size: clamp(28px, 4vw, 42px); letter-spacing: -.045em; font-weight: 700; }
+      .welcome p { margin: 0; color: var(--muted); font-size: 15px; }
+      .conversation { flex: 1; padding-bottom: 150px; }
+      .empty-prompts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 0 auto; max-width: 650px; }
+      .prompt-button { padding: 14px 16px; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; text-align: left; font-size: 14px; cursor: pointer; }
+      .prompt-button:hover { border-color: var(--accent); background: #fffaf7; }
+      .message { display: flex; gap: 14px; margin: 26px 0; line-height: 1.65; font-size: 15px; }
+      .avatar { flex: 0 0 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--soft); color: var(--accent); font-size: 12px; font-weight: 800; }
+      .message.user .avatar { color: white; background: #47433e; }
+      .message-body { min-width: 0; flex: 1; white-space: normal; }
+      .message-label { margin-bottom: 4px; color: var(--muted); font-size: 12px; font-weight: 700; }
+      .answer { white-space: pre-wrap; }
+      .sources { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
+      .sources summary { color: var(--muted); font-size: 12px; cursor: pointer; }
+      .source-item { margin-top: 9px; padding: 9px 11px; border-left: 2px solid var(--accent); color: var(--muted); background: #faf9f6; font-size: 12px; line-height: 1.5; }
+      .composer-wrap { position: fixed; right: 0; bottom: 0; left: 0; padding: 18px 16px 22px; background: linear-gradient(transparent, var(--bg) 28%); }
+      .composer { width: min(850px, 100%); margin: 0 auto; padding: 10px; background: var(--panel); border: 1px solid #d7d3cc; border-radius: 16px; box-shadow: 0 10px 35px rgba(60,48,35,.1); }
+      .composer textarea { width: 100%; min-height: 48px; max-height: 150px; padding: 8px 10px; resize: none; border: 0; outline: 0; color: var(--ink); background: transparent; font: inherit; line-height: 1.45; }
+      .composer-tools { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+      .composer select { padding: 7px 8px; border: 0; color: var(--muted); background: transparent; font-size: 12px; outline: 0; }
+      .send-button { width: 34px; height: 34px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 10px; color: white; background: var(--accent); font-size: 18px; cursor: pointer; }
+      .send-button:disabled { opacity: .45; cursor: wait; }
+      .hint { margin-top: 8px; color: var(--muted); text-align: center; font-size: 11px; }
+      .loading { color: var(--muted); font-style: italic; }
+      @media (max-width: 600px) { .topbar { padding: 0 16px; } .welcome { padding-top: 52px; } .empty-prompts { grid-template-columns: 1fr; } .conversation { padding-bottom: 170px; } }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">S</span>Standora</div>
+        <div class="status"><span class="status-dot"></span> Knowledge base connected</div>
+      </header>
+      <main class="chat-shell">
+        <section class="welcome" id="welcome">
+          <h1>What can I help you find?</h1>
+          <p>Ask about Indian Standards, BIS certification, labs, or compliance.</p>
+        </section>
+        <section class="conversation" id="conversation">
+          <div class="empty-prompts" id="emptyPrompts">
+            <button class="prompt-button" type="button" data-query="What is IS 14543?">What is IS 14543?</button>
+            <button class="prompt-button" type="button" data-query="Do toys need mandatory certification?">Do toys need mandatory certification?</button>
+            <button class="prompt-button" type="button" data-query="What is the BIS licensing process for toys?">What is the BIS licensing process for toys?</button>
+            <button class="prompt-button" type="button" data-query="Which labs can test electrical products?">Which labs can test electrical products?</button>
+          </div>
+        </section>
+      </main>
+      <div class="composer-wrap">
+        <form class="composer" id="queryForm">
+          <textarea id="queryInput" rows="1" placeholder="Message Standora..." aria-label="Message Standora"></textarea>
+          <div class="composer-tools">
+            <select id="categorySelect" aria-label="Knowledge category">
+              <option value="all">All knowledge</option>
+              <option value="food">Food</option>
+              <option value="toys">Toys</option>
+              <option value="electricals">Electricals</option>
+            </select>
+            <button class="send-button" id="sendButton" type="submit" aria-label="Send message">↑</button>
+          </div>
+        </form>
+        <div class="hint">Standora answers from the provided knowledge base and says when the sources do not cover a question.</div>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById('queryForm');
+      const queryInput = document.getElementById('queryInput');
+      const categorySelect = document.getElementById('categorySelect');
+      const conversation = document.getElementById('conversation');
+      const welcome = document.getElementById('welcome');
+      const emptyPrompts = document.getElementById('emptyPrompts');
+      const sendButton = document.getElementById('sendButton');
+
+      document.querySelectorAll('.prompt-button').forEach((button) => {
+        button.addEventListener('click', () => {
+          queryInput.value = button.dataset.query;
+          form.dispatchEvent(new Event('submit'));
+        });
+      });
+
+      function addMessage(role, text, data) {
+        const message = document.createElement('article');
+        message.className = `message ${role}`;
+        const avatar = role === 'user' ? 'You' : 'S';
+        const label = role === 'user' ? 'You' : 'Standora';
+        message.innerHTML = `<div class="avatar">${avatar}</div><div class="message-body"><div class="message-label">${label}</div><div class="answer"></div></div>`;
+        message.querySelector('.answer').textContent = text;
+        if (data && data.results && data.results.length) {
+          const details = document.createElement('details');
+          details.className = 'sources';
+          details.innerHTML = `<summary>Sources used (${data.results.length})</summary>${data.results.map((item) => `<div class="source-item"><strong>${item.section || 'Relevant source'}</strong><br>${item.source_file || 'Knowledge base source'}</div>`).join('')}`;
+          message.querySelector('.message-body').appendChild(details);
+        }
+        conversation.appendChild(message);
+        message.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        return message;
+      }
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const query = queryInput.value.trim();
+        const category = categorySelect.value;
+
+        if (!query) return;
+        welcome.style.display = 'none';
+        emptyPrompts.style.display = 'none';
+        addMessage('user', query);
+        queryInput.value = '';
+        sendButton.disabled = true;
+        const loading = addMessage('assistant', 'Searching the knowledge base...');
+
+        try {
+          const response = await fetch('/api/query', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query, category, k: 5 })
+          });
+
+          const data = await response.json();
+          if (!response.ok) {
+            throw new Error(data.error || 'Request failed');
+          }
+          loading.remove();
+          addMessage('assistant', data.answer || 'I could not find enough information in the provided knowledge base to answer that.', data);
+        } catch (error) {
+          loading.remove();
+          addMessage('assistant', `I could not complete that request: ${error.message}`);
+        } finally {
+          sendButton.disabled = false;
+          queryInput.focus();
+        }
+      });
+
+      queryInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' && !event.shiftKey) {
+          event.preventDefault();
+          form.dispatchEvent(new Event('submit'));
+        }
+      });
+    </script>
+  </body>
+</html>

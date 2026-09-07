@@ -1,0 +1,5 @@
+GROQ_API_KEY=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
+GROQ_MODEL=openai/gpt-oss-20b
+PORT=5002
+STANDORA_DATA_ROOT=/Users/afnanmohd5578/standora_clean/standora_data
+STANDORA_INDEX_DIR=/Users/afnanmohd5578/standora_clean/index

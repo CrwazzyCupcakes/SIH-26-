@@ -1,0 +1,15 @@
+{
+  "category": "packaged_food_products",
+  "faqs": [
+    {
+      "question": "What standard applies to bottled water?",
+      "answer": "IS 14543 (packaged drinking water, including mineral water). Also check FSSAI regulations, since FSSAI governs mandatory compliance for packaged food.",
+      "citation": "IS 14543"
+    },
+    {
+      "question": "Do edible oils need BIS certification?",
+      "answer": "Typically FSSAI-regulated. BIS standards exist (e.g., IS 14309, IS 11069) but check for any QCO before asserting mandatory BIS marking is required.",
+      "citation": "FAD 13 - Oils And Oilseeds committee standards"
+    }
+  ]
+}

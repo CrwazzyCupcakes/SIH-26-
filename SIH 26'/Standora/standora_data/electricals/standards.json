@@ -1,0 +1,41 @@
+{
+  "category": "electrical_appliances_electronics",
+  "standards": [
+    {
+      "is_number": "IS 16102 (Part 1)",
+      "title": "Self-ballasted LED lamps for general lighting - Safety requirements",
+      "year": "2026 (latest revision)",
+      "mandatory": true,
+      "scheme": "CRS",
+      "source_url": "https://standards.bis.gov.in/website/standard-details",
+      "notes": "Product mapping keywords: LED bulb, LED lamp, LED light"
+    },
+    {
+      "is_number": "IS 302 (Part 1)",
+      "title": "Safety of household and similar electrical appliances - General requirements",
+      "year": "2024",
+      "mandatory": true,
+      "scheme": "QCO (in force)",
+      "source_url": "https://www.services.bis.gov.in/tmp/tbl5_2024-11-18-03-08.pdf",
+      "notes": "Covers many general household appliances; check specific Part number per appliance type"
+    },
+    {
+      "is_number": "IS 13252 (Part 1)",
+      "title": "IT equipment safety (aligned to IEC 62368-1)",
+      "year": "not specified in research",
+      "mandatory": true,
+      "scheme": "CRS",
+      "source_url": "https://www.bis.gov.in/product-certification/products-under-compulsory-certification/scheme-ii-registration-scheme/",
+      "notes": "Product mapping keywords: laptop, monitor, printer, adapter, charger"
+    },
+    {
+      "is_number": "IS/IEC 62368-1",
+      "title": "Audio/Video, Information and Communication Technology Equipment - Safety",
+      "year": "2023",
+      "mandatory": true,
+      "scheme": "CRS",
+      "source_url": "https://www.bis.gov.in/product-certification/products-under-compulsory-certification/scheme-ii-registration-scheme/",
+      "notes": "Core standard referenced across many CRS entries for AV/ICT equipment"
+    }
+  ]
+}

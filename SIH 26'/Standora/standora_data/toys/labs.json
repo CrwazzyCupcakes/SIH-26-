@@ -1,0 +1,6 @@
+{
+  "category": "toys",
+  "source": "BIS LIMS - https://lims.bis.gov.in/home/labs/ (filter: toy-safety scope)",
+  "note": "PLACEHOLDER - pull actual rows from LIMS directory. Research notes that many electrical-testing labs also list toy testing scope, so cross-check overlap with electricals/labs.json when scraping.",
+  "labs": []
+}

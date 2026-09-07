@@ -1,0 +1,15 @@
+{
+  "category": "electrical_appliances_electronics",
+  "faqs": [
+    {
+      "question": "How do I check if my charger is BIS certified?",
+      "answer": "Look for the Standard Mark/QR code on the product, then verify the R-number on the BIS CRS portal to confirm it's currently valid.",
+      "citation": "CRS portal registration process, crsbis.in"
+    },
+    {
+      "question": "Which standard applies to LED lamps?",
+      "answer": "IS 16102 (Part 1) — Self-ballasted LED lamps for general lighting. Mandatory certification under CRS.",
+      "citation": "IS 16102 (Part 1); BIS Scheme-II CRS list"
+    }
+  ]
+}

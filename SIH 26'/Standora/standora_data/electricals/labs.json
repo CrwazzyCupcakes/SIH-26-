@@ -1,0 +1,25 @@
+{
+  "category": "electrical_appliances_electronics",
+  "source": "BIS LIMS - https://lims.bis.gov.in/home/labs/ (filter: electrical/electronics scope)",
+  "note": "PLACEHOLDER - pull actual rows from LIMS directory (lab code, name, address, contact, validity, scope). Example labs mentioned in research below need full contact details added.",
+  "labs": [
+    {
+      "name": "SIIR",
+      "location": "Delhi",
+      "scope": "electrical/electronics (to be confirmed via LIMS)",
+      "contact": "to be filled from LIMS"
+    },
+    {
+      "name": "Testtex",
+      "location": "Noida",
+      "scope": "electrical/electronics (to be confirmed via LIMS)",
+      "contact": "to be filled from LIMS"
+    },
+    {
+      "name": "ETDC/STQC",
+      "location": "Bengaluru",
+      "scope": "electrical/electronics (to be confirmed via LIMS)",
+      "contact": "to be filled from LIMS"
+    }
+  ]
+}
