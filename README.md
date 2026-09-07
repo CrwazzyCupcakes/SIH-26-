@@ -92,11 +92,3 @@ index/                 Generated FAISS index, ignored by Git
 ## Important note
 
 Standora is an information retrieval and summarization tool, not a legal or certification authority. Always verify current BIS notifications, QCOs, and regulatory requirements with the relevant official source before making a compliance decision.
-
-```bash
-python3 -c "from standora.ingestion.pipeline import run_ingestion; run_ingestion(data_root='standora_data', index_dir='index', force_rebuild=True)"
-```
-
-## Run the retrieval demo
-
-```bash
